@@ -1,0 +1,77 @@
+/* ==========================================================
+   Design tokens (variáveis CSS em :root) — seção 5 do guia
+   ========================================================== */
+:root {
+  --cor-papel: #eef2f7;
+  --cor-tinta: #14213d;
+  --cor-tinta-suave: #4a5775;
+  --cor-azul: #2f5bff;
+  --cor-marca: #ffd23f;
+  --cor-ok: #0b8f5a;
+  --cor-branco: #ffffff;
+
+  --esp-1: 0.25rem;
+  --esp-2: 0.5rem;
+  --esp-3: 1rem;
+  --esp-4: 1.5rem;
+  --esp-5: 2.5rem;
+
+  --fonte-titulo: 'Bricolage Grotesque', 'Trebuchet MS', sans-serif;
+  --fonte-texto: 'Figtree', system-ui, sans-serif;
+  --fonte-codigo: 'JetBrains Mono', ui-monospace, Consolas, monospace;
+  --borda: 0.1875rem solid var(--cor-tinta);
+  --sombra: 0.3125rem 0.3125rem 0 var(--cor-tinta);
+}
+
+/* ---------- Mobile-first: este CSS é o do celular ---------- */
+*, *::before, *::after { box-sizing: border-box; }
+html { font-size: 100%; /* respeita a fonte escolhida pelo usuário */ }
+body {
+  margin: 0;
+  font: 1rem/1.6 var(--fonte-texto);
+  color: var(--cor-tinta);
+  background-color: var(--cor-papel);
+  /* papel milimetrado */
+  background-image:
+    linear-gradient(rgb(20 33 61 / 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgb(20 33 61 / 0.05) 1px, transparent 1px);
+  background-size: 1.5rem 1.5rem;
+  overflow-x: hidden;
+}
+h1, h2, h3 { font-family: var(--fonte-titulo); line-height: 1.1; margin: 0 0 var(--esp-3); }
+h1 { font-size: 2.25rem; font-weight: 800; }
+h2 { font-size: 1.5rem; font-weight: 800; }
+h3 { font-size: 1.125rem; font-weight: 500; }
+p { margin: 0 0 var(--esp-3); max-width: 65ch; }
+a { color: var(--cor-azul); overflow-wrap: anywhere; }
+code { font-family: var(--fonte-codigo); font-size: 0.9em; background: var(--cor-marca); padding: 0 var(--esp-1); }
+img, svg { max-width: 100%; height: auto; }
+:focus-visible { outline: 0.1875rem solid var(--cor-azul); outline-offset: 0.1875rem; }
+
+.pagina { width: min(100% - 2rem, 60rem); margin-inline: auto; padding-block: var(--esp-4) 6rem; }
+.caixa { background: var(--cor-branco); border: var(--borda); box-shadow: var(--sombra); padding: var(--esp-3); margin-block: var(--esp-4); }
+.caixa > :last-child { margin-bottom: 0; }
+.caixa--lab { background: var(--cor-marca); }
+.caixa--lab .miolo { background: var(--cor-branco); border: var(--borda); padding: var(--esp-3); margin-top: var(--esp-3); }
+.botao {
+  font: 600 1rem var(--fonte-texto); color: var(--cor-papel); background: var(--cor-tinta);
+  border: var(--borda); padding: var(--esp-2) var(--esp-3); cursor: pointer; min-height: 2.75rem;
+}
+.botao:hover { background: var(--cor-azul); }
+.campo { font: 1rem var(--fonte-texto); border: var(--borda); padding: var(--esp-2); min-height: 2.75rem; max-width: 100%; background: var(--cor-branco); color: var(--cor-tinta); }
+.tabela-rolavel { overflow-x: auto; } /* tabelas largas rolam DENTRO da caixa, nunca na página */
+table { border-collapse: collapse; width: 100%; font-size: 0.9375rem; }
+th, td { border: 2px solid var(--cor-tinta); padding: var(--esp-2); text-align: left; vertical-align: top; }
+th { background: var(--cor-marca); }
+
+/* ---------- Telas maiores: media queries com min-width ---------- */
+@media (min-width: 40rem) {   /* 640px */
+  h1 { font-size: 3rem; }
+  h2 { font-size: 1.875rem; }
+  .caixa { padding: var(--esp-4); }
+}
+@media (min-width: 64rem) {   /* 1024px */
+  h1 { font-size: 4rem; }
+  .pagina { padding-block: var(--esp-5) 6rem; }
+}
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; animation: none !important; } }
