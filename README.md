@@ -1,10 +1,10 @@
 # Elástico — guia interativo de responsividade
 
 Guia feito em Vue 3 que ensina a criar páginas que funcionam em qualquer tela.
-Projeto da disciplina, feito em dupla.
+Projeto da disciplina de desenvolvimento web.
 
-**Site publicado:** (cole aqui o link da Vercel/Netlify)
-**Integrantes:** (nomes da dupla)
+**Site publicado:** https://guia-elastico-gx6l.vercel.app/
+**Autor:** Pedro de Lima Cavalcanti
 
 ## O que tem
 - 6 seções (viewport, unidades, flex/grid, imagens, boas práticas em Vue, desafio), cada uma com explicação, código comentado, pergunta-guia respondida e fontes
